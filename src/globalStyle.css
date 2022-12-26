@@ -1,0 +1,39 @@
+.input{
+    background-color: transparent;
+    border-radius: 5px;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input:focus-visible{
+    outline: none;
+}
+
+.input::placeholder{
+    color: #fff;
+}
+
+.login__inputs-block{
+    margin-bottom: 20px;
+}
+
+.button{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid linear-gradient(-45deg, rgba(120, 155, 255, 0.9) 25%, rgba(255, 160, 65, 0.9) 75%),linear-gradient(rgba(135, 60, 255, 0.4), rgba(135, 60, 255, 0.0) 80%);
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 15px 30px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    display: block;
+    margin: 30px 0;
+}
+
+.button:focus-visible{
+    outline: none;
+}

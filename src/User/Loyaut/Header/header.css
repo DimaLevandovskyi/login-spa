@@ -1,0 +1,33 @@
+.header{
+    background: #fff;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__item{
+    color: #000;
+    margin: 0px 10px;
+    text-decoration: none;
+    display: block;
+    padding-bottom: 2px;
+}
+
+.header__item.active{
+    border-bottom: 3px solid rgba(98, 0, 255, 0.4);
+}
+
+.header__logout{
+    cursor: pointer;
+}
