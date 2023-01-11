@@ -2,20 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Task from "./task.tsx";
 import store from "./App/Redux-store/redux-store";
-import './globalStyle.css'
+import { Provider } from 'react-redux'
+import './style.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
-let rendererDom = (state): void =>{
+let rendererDom = () =>{
   root.render(
     <React.StrictMode>
-      <Task state={state} dispatch={store.dispatch}/>
+      <Provider store={store}>
+        <Task state={store.getState()} dispatch={store.dispatch}/>
+      </Provider>
     </React.StrictMode>
   );
 }
+  
 
-rendererDom(store.getState())
+rendererDom(store)
 
 store.subscribe(()=>{
-  rendererDom(store.getState())
+  rendererDom(store)
 })

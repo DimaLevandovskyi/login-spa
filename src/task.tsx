@@ -6,17 +6,15 @@ import Header from './User/Loyaut/Header/header.tsx'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
-export default function task(props) {
-    console.log(props,'qfg bfb');
+export default function Task({state, dispatch}) {
     return (
         <Loyaut>
             <BrowserRouter>
-                <Header state={props.state} dispatch={props.dispatch} loginPage={props.state.pages.loginPage} />
-                <Routes>
-                    <Route path="/login" element={<LoginPage dispatch={props.dispatch} loginPage={props.state.pages.loginPage} />}  />
-                    {/* <Route path="/" element={<LoginPage dispatch={props.dispatch} loginPage={props.state.pages.loginPage}/>} /> */}
-                    <Route path="/table" element={<TablePage />} />
-                </Routes>
+                    <Header state={state} dispatch={dispatch} loginPage={state.pages.loginPage} />
+                    <Routes>
+                        <Route path="/login" element={<LoginPage dispatch={dispatch} loginPage={state.pages.loginPage} />}  />
+                        <Route path="/table" element={<TablePage />} />
+                    </Routes>
             </BrowserRouter>
         </Loyaut>
     )

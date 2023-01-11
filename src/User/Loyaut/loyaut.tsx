@@ -1,10 +1,9 @@
 import React from 'react'
-import './loyaut.css'
 
-export default function loyaut(props) {
+export default function Loyaut({children}) {
   return (
     <div className='loyaut'>
-        {props.children}
+        {children}
     </div>
   )
 }

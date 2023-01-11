@@ -39,53 +39,57 @@ let initialState: initialStateType = {
 }
 
 
-let loginReducer = (state = initialState, action):any =>{
+let LoginReducer = (state = initialState, action):any =>{
+    let copyState:any = {...state}
+    copyState.loginPage = {...state.loginPage}
+    copyState.loginPage.errors = {...state.loginPage.errors}
+
     switch (action.type) {
         case ENTER_LOGIN:
 
-            state.loginPage.enteredLogin = action.login
-            return state;
+            copyState.loginPage.enteredLogin = action.login
+            return copyState;
 
         case ENTER_PASSWORD:
 
-            state.loginPage.enteredPassword = action.password
-            return state;
+            copyState.loginPage.enteredPassword = action.password
+            return copyState;
     
         case WRONG_SUBMIT:
 
-            if(state.loginPage.errors.wrongLogin === false && state.loginPage.errors.wrongPassword === false){
-                state.loginPage.wrongSubmit = true
+            if(copyState.loginPage.errors.wrongLogin === false && copyState.loginPage.errors.wrongPassword === false){
+                copyState.loginPage.wrongSubmit = true
             }
-            return state;
+            return copyState;
 
         case USER_LOGIN:
 
             let validEmail:any = new RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu);
-            if(validEmail.test(state.loginPage.enteredLogin) === false) {
-                state.loginPage.errors.wrongLogin = true
+            if(validEmail.test(copyState.loginPage.enteredLogin) === false) {
+                copyState.loginPage.errors.wrongLogin = true
             } else {
-                state.loginPage.errors.wrongLogin = false
+                copyState.loginPage.errors.wrongLogin = false
             }
 
             let validPassword:any = new RegExp(/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g)
-            if(validPassword.test(state.loginPage.enteredPassword) === false) {
-                state.loginPage.errors.wrongPassword = true
+            if(validPassword.test(copyState.loginPage.enteredPassword) === false) {
+                copyState.loginPage.errors.wrongPassword = true
             } else {
-                state.loginPage.errors.wrongPassword = false
+                copyState.loginPage.errors.wrongPassword = false
             }
 
-            return state;
+            return copyState;
 
         case USER_STATUS:
 
-            state.loginPage.userStatus = localStorage.getItem("User login")
-            return state 
+            copyState.loginPage.userStatus = localStorage.getItem("User login")
+            return copyState 
         default:
-            return state;
+            return copyState;
     }
 }
 
-export default loginReducer
+export default LoginReducer
 
 export let enterLoginAction = (login) => ({type: ENTER_LOGIN, login:login})
 
