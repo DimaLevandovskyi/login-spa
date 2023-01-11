@@ -7,19 +7,19 @@ import './style.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
-let rendererDom = (store) =>{
+let rendererDom = () =>{
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-        <Task state={store} dispatch={store.dispatch}/>
+        <Task state={store.getState()} dispatch={store.dispatch}/>
       </Provider>
     </React.StrictMode>
   );
 }
   
 
-rendererDom(store.getState())
+rendererDom()
 
 store.subscribe(()=>{
-  rendererDom(store.getState())
+  rendererDom()
 })

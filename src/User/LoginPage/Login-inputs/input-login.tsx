@@ -4,8 +4,6 @@ import { enterLoginAction } from '../../../App/Reducers/loginPage/loginReducer.t
 
 
 const mapStateToProps = (state)=> {
-    console.log(state);
-    
     return {
         placeholder: 'Email',
         className: 'input',

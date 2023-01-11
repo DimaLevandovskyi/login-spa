@@ -4,8 +4,6 @@ import { enterPasswordAction } from '../../../App/Reducers/loginPage/loginReduce
 
 
 const mapStateToProps = (state)=> {
-    console.log(state);
-    
     return {
         placeholder: 'Password',
         className: 'input',
