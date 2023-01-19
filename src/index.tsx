@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Task from "./task.tsx";
+import Task from "./task";
 import store from "./App/Redux-store/redux-store";
 import { Provider } from 'react-redux'
 import './style.scss'

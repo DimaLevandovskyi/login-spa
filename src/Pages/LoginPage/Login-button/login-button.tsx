@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Button from '../../GlobalComponent/Buttons/buttonPrimary.tsx'
+import Button from '../../GlobalComponent/Buttons/buttonPrimary'
 
 const superButton = ({enterData, type, text, className}) =>{
     const onClick = () =>{

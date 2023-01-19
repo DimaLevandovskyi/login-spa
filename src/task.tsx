@@ -1,8 +1,8 @@
 import React from 'react'
-import LoginPage from './Pages/LoginPage/login-page.tsx';
-import Loyaut from './Pages/Loyaut/loyaut.tsx';
-import TablePage from './Pages/TablePage/tablePage.tsx'
-import Header from './Pages/Loyaut/Header/header.tsx'
+import LoginPage from './Pages/LoginPage/login-page';
+import Loyaut from './Pages/Loyaut/loyaut';
+import TablePage from './Pages/TablePage/tablePage'
+import Header from './Pages/Loyaut/Header/header'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 

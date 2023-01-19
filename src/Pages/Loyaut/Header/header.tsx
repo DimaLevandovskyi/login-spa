@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderLoyaut from "./header-wrapper.tsx";
+import HeaderLoyaut from "./header-wrapper";
 
 
 export default function Header({loginPage, dispatch}) {

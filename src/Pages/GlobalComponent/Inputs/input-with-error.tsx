@@ -1,5 +1,5 @@
 import React from 'react'
-import InputError from './input-error.tsx'
+import InputError from './input-error'
 
 export default function InputWithError({enterData, value, errorEmail, type, placeholder, className, errorPassword}) {
     return (
