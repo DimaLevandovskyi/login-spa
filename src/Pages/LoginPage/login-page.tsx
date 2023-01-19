@@ -1,8 +1,8 @@
 import React from 'react'
-import LoginWrapper from './login-wrapper.tsx'
-import LoginForm from './login-form.tsx'
-import LoginErrors from './login-errors.tsx'
-import Heading from '../../User/GlobalComponent/Heading/heading.tsx'
+import LoginWrapper from './login-wrapper'
+import LoginForm from './login-form'
+import LoginErrors from './login-errors'
+import Heading from '../../Pages/GlobalComponent/Heading/heading'
 
 export default function LoginPage({dispatch, loginPage}) {
 
@@ -10,7 +10,7 @@ export default function LoginPage({dispatch, loginPage}) {
     <LoginWrapper>
       <Heading className='login__title' heading='Login'/>
       <LoginErrors 
-      loginPage={loginPage} />
+        loginPage={loginPage} />
       <LoginForm 
         loginPage={loginPage}
         dispatch={dispatch} />

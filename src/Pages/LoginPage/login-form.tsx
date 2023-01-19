@@ -1,8 +1,8 @@
 import React from 'react'
-import {userLoginAction, wrongSubmitAction } from '../../App/Reducers/loginPage/loginReducer.ts'
-import Button from '../GlobalComponent/Buttons/buttonPrimary.tsx'
-import InputLoginWithErrorConnect from './Login-inputs/input-login.tsx'
-import InputPasswormWithErrorConnect from './Login-inputs/input-password.tsx'
+import {userLoginAction, wrongSubmitAction } from '../../App/Reducers/loginPage/loginReducer'
+import Button from '../GlobalComponent/Buttons/buttonPrimary'
+import InputLoginWithErrorConnect from './Login-inputs/input-login'
+import InputPasswormWithErrorConnect from './Login-inputs/input-password'
 
 
 export default function LoginForm({ dispatch, loginPage }) {

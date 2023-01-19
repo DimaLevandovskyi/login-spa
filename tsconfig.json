@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "ES2020",
+      "moduleResolution": "node",
+      "outDir": "dist",
+      "types": [
+        "node"
+      ],
+      "baseUrl": ".",
+      "paths": {
+        "*": [
+          "node_modules/*"
+        ]
+      },
+      "strict": true,
+      "allowJs": false,
+      "checkJs": false,
+      "declaration": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "strictBindCallApply": true,
+      "strictPropertyInitialization": true,
+      "noImplicitReturns": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noFallthroughCasesInSwitch": true,
+      "stripInternal": true,
+      "noImplicitThis": true,
+      "alwaysStrict": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "sourceMap": true
+    },
+    "include": [
+      "./src",
+    ],
+    "exclude": [
+      "./dist"
+    ]
+  }

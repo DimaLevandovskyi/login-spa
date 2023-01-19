@@ -4,12 +4,12 @@ let WRONG_SUBMIT = 'WRONG-SUBMIT'
 let USER_LOGIN = 'USER-LOGIN'
 let USER_STATUS = 'USER-STATUS'
 
-type errorsType = {
+type ErrorsType = {
     wrongLogin: boolean,
     wrongPassword: boolean,
 }
 
-type initialStateType = {
+type InitialStateType = {
     loginPage: {
         defaultLogin: string,
         defaultPassword: string,
@@ -17,12 +17,12 @@ type initialStateType = {
         enteredPassword: string,
         wrongSubmit: boolean,
         userLogin: boolean,
-        errors: errorsType,
+        errors: ErrorsType,
         userStatus: any
     }
 }
 
-let initialState: initialStateType = {
+let initialState: InitialStateType = {
     loginPage: {
         defaultLogin: 'login@login.io',
         defaultPassword: 'baster1!K',
@@ -39,8 +39,8 @@ let initialState: initialStateType = {
 }
 
 
-let LoginReducer = (state = initialState, action):any =>{
-    let copyState:any = {...state}
+let LoginReducer = (state = initialState, action:any):InitialStateType =>{
+    let copyState:InitialStateType = {...state}
     copyState.loginPage = {...state.loginPage}
     copyState.loginPage.errors = {...state.loginPage.errors}
 
@@ -64,14 +64,14 @@ let LoginReducer = (state = initialState, action):any =>{
 
         case USER_LOGIN:
 
-            let validEmail:any = new RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu);
+            let validEmail:RegExp = new RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu);
             if(validEmail.test(copyState.loginPage.enteredLogin) === false) {
                 copyState.loginPage.errors.wrongLogin = true
             } else {
                 copyState.loginPage.errors.wrongLogin = false
             }
 
-            let validPassword:any = new RegExp(/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g)
+            let validPassword:RegExp = new RegExp(/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g)
             if(validPassword.test(copyState.loginPage.enteredPassword) === false) {
                 copyState.loginPage.errors.wrongPassword = true
             } else {
@@ -91,9 +91,9 @@ let LoginReducer = (state = initialState, action):any =>{
 
 export default LoginReducer
 
-export let enterLoginAction = (login) => ({type: ENTER_LOGIN, login:login})
+export let enterLoginAction = (login:string) => ({type: ENTER_LOGIN, login:login})
 
-export let enterPasswordAction = (password) => ({type: ENTER_PASSWORD, password:password})
+export let enterPasswordAction = (password:string) => ({type: ENTER_PASSWORD, password:password})
 
 export let wrongSubmitAction = () => ({type: WRONG_SUBMIT})
 

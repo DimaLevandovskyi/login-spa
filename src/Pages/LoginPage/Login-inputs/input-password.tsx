@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import InputWithError from '../../GlobalComponent/Inputs/input-with-error.tsx'
+import InputWithError from '../../GlobalComponent/Inputs/input-with-error'
 import { enterPasswordAction } from '../../../App/Reducers/loginPage/loginReducer.ts'
 
 
