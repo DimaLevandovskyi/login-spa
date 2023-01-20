@@ -1,28 +1,28 @@
-let ENTER_LOGIN = 'ENTER-LOGIN'
-let ENTER_PASSWORD = 'ENTER-PASSWORD'
-let WRONG_SUBMIT = 'WRONG-SUBMIT'
-let USER_LOGIN = 'USER-LOGIN'
-let USER_STATUS = 'USER-STATUS'
+const ENTER_LOGIN = 'ENTER-LOGIN';
+const ENTER_PASSWORD = 'ENTER-PASSWORD';
+const WRONG_SUBMIT = 'WRONG-SUBMIT';
+const USER_LOGIN = 'USER-LOGIN';
+const USER_STATUS = 'USER-STATUS';
 
 type ErrorsType = {
-    wrongLogin: boolean,
-    wrongPassword: boolean,
+  wrongLogin: boolean,
+  wrongPassword: boolean,
 }
 
 type InitialStateType = {
-    loginPage: {
-        defaultLogin: string,
-        defaultPassword: string,
-        enteredLogin: string,
-        enteredPassword: string,
-        wrongSubmit: boolean,
-        userLogin: boolean,
-        errors: ErrorsType,
-        userStatus: any
-    }
+  loginPage: {
+    defaultLogin: string,
+    defaultPassword: string,
+    enteredLogin: string,
+    enteredPassword: string,
+    wrongSubmit: boolean,
+    userLogin: boolean,
+    errors: ErrorsType,
+    userStatus: any
+  }
 }
 
-let initialState: InitialStateType = {
+const initialState: InitialStateType = {
     loginPage: {
         defaultLogin: 'login@login.io',
         defaultPassword: 'baster1!K',
@@ -32,71 +32,79 @@ let initialState: InitialStateType = {
         userLogin: false,
         errors: {
             wrongLogin: false,
-            wrongPassword: false
+            wrongPassword: false,
         },
-        userStatus: localStorage.getItem("User login")
-    }
-}
+        userStatus: localStorage.getItem('User login'),
+    },
+};
 
-
-let LoginReducer = (state = initialState, action:any):InitialStateType =>{
-    let copyState:InitialStateType = {...state}
-    copyState.loginPage = {...state.loginPage}
-    copyState.loginPage.errors = {...state.loginPage.errors}
+const LoginReducer = (state = initialState, action: any): InitialStateType => {
+    const copyState: InitialStateType = { ...state };
+    copyState.loginPage = { ...state.loginPage };
+    copyState.loginPage.errors = { ...state.loginPage.errors };
 
     switch (action.type) {
-        case ENTER_LOGIN:
+    case ENTER_LOGIN:
 
-            copyState.loginPage.enteredLogin = action.login
-            return copyState;
+        copyState.loginPage.enteredLogin = action.login;
+        return copyState;
 
-        case ENTER_PASSWORD:
+    case ENTER_PASSWORD:
 
-            copyState.loginPage.enteredPassword = action.password
-            return copyState;
-    
-        case WRONG_SUBMIT:
+        copyState.loginPage.enteredPassword = action.password;
+        return copyState;
 
-            if(copyState.loginPage.errors.wrongLogin === false && copyState.loginPage.errors.wrongPassword === false){
-                copyState.loginPage.wrongSubmit = true
-            }
-            return copyState;
+    case WRONG_SUBMIT:
 
-        case USER_LOGIN:
+        if (copyState.loginPage.errors.wrongLogin === false &&
+          copyState.loginPage.errors.wrongPassword === false) {
+            copyState.loginPage.wrongSubmit = true;
+        }
+        return copyState;
 
-            let validEmail:RegExp = new RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu);
-            if(validEmail.test(copyState.loginPage.enteredLogin) === false) {
-                copyState.loginPage.errors.wrongLogin = true
-            } else {
-                copyState.loginPage.errors.wrongLogin = false
-            }
+    case USER_LOGIN:
 
-            let validPassword:RegExp = new RegExp(/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g)
-            if(validPassword.test(copyState.loginPage.enteredPassword) === false) {
-                copyState.loginPage.errors.wrongPassword = true
-            } else {
-                copyState.loginPage.errors.wrongPassword = false
-            }
+        const validEmail = new RegExp(
+            /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu);
+        if (validEmail.test(copyState.loginPage.enteredLogin) === false) {
+            copyState.loginPage.errors.wrongLogin = true;
+        } else {
+            copyState.loginPage.errors.wrongLogin = false;
+        }
 
-            return copyState;
+        const validPassword = new RegExp(
+            /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g);
+        if (validPassword.test(copyState.loginPage.enteredPassword) === false) {
+            copyState.loginPage.errors.wrongPassword = true;
+        } else {
+            copyState.loginPage.errors.wrongPassword = false;
+        }
 
-        case USER_STATUS:
+        return copyState;
 
-            copyState.loginPage.userStatus = localStorage.getItem("User login")
-            return copyState 
-        default:
-            return copyState;
+    case USER_STATUS:
+
+        copyState.loginPage.userStatus = localStorage.getItem('User login');
+        return copyState;
+    default:
+        return copyState;
     }
-}
+};
 
-export default LoginReducer
+export default LoginReducer;
 
-export let enterLoginAction = (login:string) => ({type: ENTER_LOGIN, login:login})
+export const enterLoginAction = (login: string) => ({
+    type: ENTER_LOGIN,
+    login,
+});
 
-export let enterPasswordAction = (password:string) => ({type: ENTER_PASSWORD, password:password})
+export const enterPasswordAction = (password: string) => ({
+    type: ENTER_PASSWORD,
+    password,
+});
 
-export let wrongSubmitAction = () => ({type: WRONG_SUBMIT})
+export const wrongSubmitAction = () => ({ type: WRONG_SUBMIT });
 
-export let userLoginAction = () => ({type: USER_LOGIN})
+export const userLoginAction = () => ({ type: USER_LOGIN });
 
-export let userStatusAction = () => ({type: USER_STATUS})
+export const userStatusAction = () => ({ type: USER_STATUS });

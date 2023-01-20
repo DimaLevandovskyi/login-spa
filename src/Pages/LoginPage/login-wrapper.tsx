@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-export default function LoginWrapper({children}) {
-  return (
-    <div className='login'>
-        {children}
-    </div>
-  )
+export default function LoginWrapper({ children }) {
+    return (
+        <div className='login'>
+            {children}
+        </div>
+    );
 }
