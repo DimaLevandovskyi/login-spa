@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { userStatusAction } from '../../../App/Reducers/loginPage/loginReducer.ts';
+import { userStatusAction } from '../../../App/Reducers/loginPage/loginReducer';
 
 export default function HeaderLoyaut({ loginPage, dispatch }) {
     const logaut = () => {

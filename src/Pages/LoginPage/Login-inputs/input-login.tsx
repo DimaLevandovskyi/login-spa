@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import InputWithError from '../../GlobalComponent/Inputs/input-with-error';
-import { enterLoginAction } from '../../../App/Reducers/loginPage/loginReducer.ts';
+import { enterLoginAction } from '../../../App/Reducers/loginPage/loginReducer';
 
 
 const mapStateToProps = (state) => ({
