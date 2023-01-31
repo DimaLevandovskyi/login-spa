@@ -1,6 +1,10 @@
 import React from 'react';
+import { LoginPageType } from '../../Types/Types';
 
-export default function LoginErrors({ loginPage }) {
+type LoginErrorsType = {
+    loginPage:LoginPageType
+}
+export default function LoginErrors({ loginPage }:LoginErrorsType) {
     return (
         <>
             {

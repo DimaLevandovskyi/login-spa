@@ -1,6 +1,9 @@
 import React from 'react';
 
-export default function LoginWrapper({ children }) {
+type PropsType = {
+    children: JSX.Element[];
+}
+export default function Wrapper({ children }:PropsType) {
     return (
         <div className='login'>
             {children}

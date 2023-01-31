@@ -1,9 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { userStatusAction } from '../../../App/Reducers/loginPage/loginReducer';
+import LoginPageType from '../../../Types/Types';
+import { AppDispatch } from '../../../App/Redux-store/redux-store';
 
-export default function HeaderLoyaut({ loginPage, dispatch }) {
-    const logaut = () => {
+type HeaderLayoutType = {
+    dispatch:AppDispatch,
+    loginPage:LoginPageType
+}
+export default function HeaderLayout({ loginPage, dispatch }:HeaderLayoutType) {
+    const logout = ():void => {
         localStorage.setItem('User login', 'false');
         dispatch(userStatusAction());
     };
@@ -19,7 +25,7 @@ export default function HeaderLoyaut({ loginPage, dispatch }) {
             </div>
             {
                 loginPage.userStatus === 'true' ?
-                    <div onClick={logaut} className="header__logout">Logout</div> :
+                    <div onClick={logout} className="header__logout">logout</div> :
                     null
             }
         </header>

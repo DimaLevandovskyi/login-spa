@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default function InputError({ errorText, errorType }) {
+type propsType = {
+    errorText:string,
+    errorType:boolean
+}
+export default function InputError({ errorText, errorType }:propsType) {
     return (
         <>
             {

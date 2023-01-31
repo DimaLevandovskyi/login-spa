@@ -1,6 +1,9 @@
 import React from 'react';
 
-export default function Loyaut({ children }) {
+type PropsType = {
+    children: JSX.Element|JSX.Element[];
+}
+export default function Layout({ children }: PropsType) {
     return (
         <div className='loyaut'>
             {children}
