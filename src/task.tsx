@@ -7,11 +7,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AppDispatch, RootState } from './App/Redux-store/redux-store';
 
 type TaskType = {
-    state:RootState,
-    dispatch:AppDispatch
+    state: RootState,
+    dispatch: AppDispatch
 }
 
 export default function Task({ state, dispatch }:TaskType) {
+    console.log(state.pages.loginPage);
     return (
         <Layout>
             <BrowserRouter>

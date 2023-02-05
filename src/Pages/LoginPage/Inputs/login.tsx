@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import InputWithError from '../../../GlobalComponent/Inputs/input-with-error';
-import { enterLoginAction } from '../../../App/Reducers/loginPage/loginReducer';
+import { enterLoginAction } from '../../../App/Reducers/loginPage/errors';
 import { AppDispatch, RootState } from '../../../App/Redux-store/redux-store';
 
 type MapStateToPropsType = {
@@ -8,7 +8,7 @@ type MapStateToPropsType = {
     className:string,
     type:string,
     value: string,
-    errorEmail:boolean,
+    errorEmail: boolean,
     errorPassword:boolean,
 }
 const mapStateToProps = (state:RootState):MapStateToPropsType => ({

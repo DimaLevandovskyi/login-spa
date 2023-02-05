@@ -14,8 +14,7 @@ const superButton = ({ text, className, loginPage, wrongSubmitAction }:superButt
 
         if (loginPage.defaultLogin === loginPage.enteredLogin && loginPage.defaultPassword === loginPage.enteredPassword) {
             localStorage.setItem('User login', 'true');
-            console.log(e.target);
-            // e.target.submit();
+            location.href = '/table';
         } else {
             wrongSubmitAction();
         }

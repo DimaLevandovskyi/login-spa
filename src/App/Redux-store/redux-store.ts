@@ -1,10 +1,9 @@
 import { combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import LoginReducer from '../Reducers/loginPage/loginReducer';
-
+import { loginPageReducers } from '../Reducers/loginPage/reduceRducers';
 
 const reducers = combineReducers({
-    pages: LoginReducer
+    pages: loginPageReducers
 });
 
 const store = createStore(
@@ -15,5 +14,7 @@ const store = createStore(
 export default store;
 
 export type RootState = ReturnType<typeof store.getState>
+
+export type RootStore = typeof store
 
 export type AppDispatch = typeof store.dispatch

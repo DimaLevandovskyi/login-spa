@@ -4,8 +4,8 @@ import { AppDispatch } from '../../../App/Redux-store/redux-store';
 import HeaderLayout from './wrapper';
 
 type HeaderType = {
-    loginPage:LoginPageType,
-    dispatch:AppDispatch
+    loginPage: LoginPageType,
+    dispatch: AppDispatch
 }
 export default function Header({ loginPage, dispatch }:HeaderType) {
     return (

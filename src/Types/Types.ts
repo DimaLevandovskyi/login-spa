@@ -4,20 +4,16 @@ export type ActionType = {
     login?: string,
 }
 
-type ErrorsType = {
-    wrongLogin: boolean,
-    wrongPassword: boolean,
-}
-
 export type LoginPageType = {
-    defaultLogin: string,
-    defaultPassword: string,
     enteredLogin: string,
     enteredPassword: string,
     wrongSubmit: boolean,
+    errors: {
+        wrongLogin: boolean,
+        wrongPassword: boolean,
+    },
+    defaultLogin: string,
+    defaultPassword: string,
     userLogin: boolean,
-    errors: ErrorsType,
     userStatus: string | null,
 }
-
-export default LoginPageType;
