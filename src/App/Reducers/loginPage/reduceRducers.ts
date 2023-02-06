@@ -1,22 +1,23 @@
 import LoginReducer, { initialState } from '../../Reducers/loginPage/loginReducer';
 import Errors, { initialStateT } from '../../Reducers/loginPage/errors';
 import { ActionType } from '../../../Types/Types';
+import {compose} from "redux";
 
 const pageInit = {
     loginPage: { ...initialState, ...initialStateT }
 };
 
-const arrayReducers = [LoginReducer, Errors];
-
 export type PageInitType = typeof pageInit;
-export const loginPageReducers = (state:PageInitType = pageInit, action:ActionType) => {
+export type PageType = typeof pageInit.loginPage;
+
+export const loginPageReducers = (state:PageInitType = pageInit, action:ActionType): PageInitType => {
+    const arrayReducers = compose(
+        (s: PageType ) => LoginReducer(s, action),
+        (s: PageType) => Errors(s, action),
+        );
+
     return {
         ...state,
-        loginPage: arrayReducers.reduce(
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            (previousValue, currentValue) => currentValue(previousValue, action),
-            { ...state.loginPage }
-        )
+        loginPage: arrayReducers({ ...state.loginPage }, action) as PageType
     };
 };
