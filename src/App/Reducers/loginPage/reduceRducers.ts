@@ -17,7 +17,6 @@ export const loginPageReducers = (state:PageInitType = pageInit, action:ActionTy
     );
 
     return {
-        ...state,
         loginPage: arrayReducers({ ...state.loginPage }, action) as PageType
     };
 };

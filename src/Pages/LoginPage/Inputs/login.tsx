@@ -19,7 +19,6 @@ const mapStateToProps = (state:RootState):MapStateToPropsType => ({
     errorEmail: state.pages.loginPage.errors.wrongLogin,
     errorPassword: false
 });
-
 const mapDispatchToProps = (dispatch:AppDispatch) => ({
     enterData: (login:string) => {
         dispatch(enterLoginAction(login));

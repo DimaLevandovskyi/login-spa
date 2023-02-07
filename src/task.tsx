@@ -10,9 +10,7 @@ type TaskType = {
     state: RootState,
     dispatch: AppDispatch
 }
-
 export default function Task({ state, dispatch }:TaskType) {
-    console.log(state.pages.loginPage);
     return (
         <Layout>
             <BrowserRouter>

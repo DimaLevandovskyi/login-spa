@@ -9,7 +9,6 @@ import './style.scss';
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 const rendererDom = (store:RootStore):void => {
-    console.log(store.getState());
     root.render(
         <React.StrictMode>
             <Provider store={store}>
