@@ -1,4 +1,4 @@
-import { ActionType } from '../../../Types/Types';
+import { ActionType } from '../../../Types/types';
 
 const ENTER_LOGIN = 'ENTER-LOGIN';
 const ENTER_PASSWORD = 'ENTER-PASSWORD';

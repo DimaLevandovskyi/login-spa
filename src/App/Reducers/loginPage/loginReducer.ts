@@ -1,4 +1,4 @@
-import { ActionType } from '../../../Types/Types';
+import { ActionType } from '../../../Types/types';
 
 const USER_STATUS = 'USER-STATUS';
 

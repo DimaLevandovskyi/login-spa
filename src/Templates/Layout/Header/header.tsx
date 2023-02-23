@@ -1,7 +1,7 @@
 import React from 'react';
-import { LoginPageType } from '../../../Types/Types';
+import { LoginPageType } from '../../../Types/types';
 import { AppDispatch } from '../../../App/Redux-store/redux-store';
-import HeaderLayout from './wrapper';
+import Layout from './wrapper';
 
 type HeaderType = {
     loginPage: LoginPageType,
@@ -9,7 +9,7 @@ type HeaderType = {
 }
 export default function Header({ loginPage, dispatch }:HeaderType) {
     return (
-        <HeaderLayout
+        <Layout
             loginPage={loginPage}
             dispatch={dispatch} />
     );

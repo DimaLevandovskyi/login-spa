@@ -1,14 +1,14 @@
 import React from 'react';
-import Button from '../../../GlobalComponent/Buttons/buttonPrimary';
-import { LoginPageType } from '../../../Types/Types';
+import Button from '../../../../Templates/Buttons/buttonPrimary';
+import { LoginPageType } from '../../../../Types/types';
 
 type superButtonType = {
     text: string,
-    className:string,
+    prefix?: string,
     loginPage: LoginPageType,
     wrongSubmitAction: () => void,
 }
-const superButton = ({ text, className, loginPage, wrongSubmitAction }:superButtonType) => {
+const superButton = ({ text, prefix, loginPage, wrongSubmitAction }:superButtonType) => {
     const onClickButton = (e:React.SyntheticEvent) => {
         e.preventDefault();
 
@@ -20,7 +20,7 @@ const superButton = ({ text, className, loginPage, wrongSubmitAction }:superButt
         }
     };
 
-    return <Button onClick={onClickButton} text={text} className={className} />;
+    return <Button onClick={onClickButton} text={text} className={`${prefix as string}__button button`} />;
 };
 
 export default superButton;

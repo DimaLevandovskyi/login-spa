@@ -4,7 +4,7 @@ type propsType = {
     errorText:string,
     errorType:boolean
 }
-export default function InputError({ errorText, errorType }:propsType) {
+export default function WrapperError({ errorText, errorType }:propsType) {
     return (
         <>
             {

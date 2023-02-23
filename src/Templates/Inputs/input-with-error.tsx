@@ -1,5 +1,5 @@
 import React from 'react';
-import InputError from './input-error';
+import WrapperError from './input-error';
 
 type propsType = {
     errorEmail:boolean,
@@ -9,21 +9,22 @@ type propsType = {
     placeholder:string,
     className:string,
     errorPassword:boolean,
+    prefix?:string
 }
 export default function InputWithError(
-    { enterData, value, errorEmail, type, placeholder, className, errorPassword }:propsType) {
+    { enterData, value, errorEmail, type, placeholder, className, errorPassword, prefix }:propsType) {
     return (
-        <div className="login__inputs-block">
+        <div className={`${prefix as string}__inputs-block`}>
             <input
-                onChange={(e) => { enterData(e.target.value); }}
+                onChange={(e) => { enterData(e.target.value); } }
                 placeholder={placeholder}
                 className={className}
                 type={type}
                 value={value} />
-            <InputError
+            <WrapperError
                 errorType={errorEmail}
                 errorText='Your Email is incorrect'/>
-            <InputError
+            <WrapperError
                 errorType={errorPassword}
                 errorText='The password must have uppercase and
                 lowercase latin letters, one symbol, numbers and length is at least 6 elements'/>

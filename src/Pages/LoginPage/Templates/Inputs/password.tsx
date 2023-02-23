@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import InputWithError from '../../../GlobalComponent/Inputs/input-with-error';
-import { enterPasswordAction } from '../../../App/Reducers/loginPage/errors';
-import { AppDispatch, RootState } from '../../../App/Redux-store/redux-store';
+import InputWithError from '../../../../Templates/Inputs/input-with-error';
+import { enterPasswordAction } from '../../../../App/Reducers/loginPage/errors';
+import { AppDispatch, RootState } from '../../../../App/Redux-store/redux-store';
 
 type MapStateToPropsType = {
     placeholder:string,

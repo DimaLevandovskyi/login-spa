@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { userStatusAction } from '../../../App/Reducers/loginPage/loginReducer';
-import { LoginPageType } from '../../../Types/Types';
+import { LoginPageType } from '../../../Types/types';
 import { AppDispatch } from '../../../App/Redux-store/redux-store';
 
 type HeaderLayoutType = {
     dispatch:AppDispatch,
     loginPage: LoginPageType
 }
-export default function HeaderLayout({ loginPage, dispatch }:HeaderLayoutType) {
+export default function Layout({ loginPage, dispatch }:HeaderLayoutType) {
     const logout = ():void => {
         localStorage.setItem('User login', 'false');
         dispatch(userStatusAction());

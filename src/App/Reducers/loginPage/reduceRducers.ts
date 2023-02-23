@@ -1,6 +1,6 @@
 import LoginReducer, { initialState } from '../../Reducers/loginPage/loginReducer';
 import Errors, { initialStateT } from '../../Reducers/loginPage/errors';
-import { ActionType } from '../../../Types/Types';
+import { ActionType } from '../../../Types/types';
 import { compose } from 'redux';
 
 const pageInit = {

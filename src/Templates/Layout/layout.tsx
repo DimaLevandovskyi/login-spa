@@ -5,7 +5,7 @@ type PropsType = {
 }
 export default function Layout({ children }: PropsType) {
     return (
-        <div className='loyaut'>
+        <div className='layout'>
             {children}
         </div>
     );
