@@ -1,11 +1,11 @@
 import React from 'react';
 import Wrapper from './Templates/wrapper';
-import LoginForm from './Templates/form';
-import LoginErrors from './Errors/errors';
+import Form from './Templates/form';
+import Errors from './Errors/errors';
 import Heading from '../../Templates/Heading/heading';
 import { LoginPageType } from '../../Types/types';
 import { AppDispatch } from '../../App/Redux-store/redux-store';
-import LoginPrefix from './PrefixConsumer/prefixConsumer';
+import LoginPrefix from '././Prefix-consumer/prefixConsumer';
 
 type LoginType = {
     dispatch:AppDispatch,
@@ -17,8 +17,8 @@ export default function LoginPage({ loginPage }:LoginType) {
             <Wrapper>
                 <LoginPrefix>
                     <Heading heading='Login'/>
-                    <LoginErrors loginPage={loginPage} />
-                    <LoginForm />
+                    <Errors loginPage={loginPage} />
+                    <Form />
                 </LoginPrefix>
             </Wrapper>
         </LoginPrefix>

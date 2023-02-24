@@ -2,9 +2,9 @@ import React from 'react';
 import LoginButtonConnect from '../Templates/Button/button';
 import InputLoginWithErrorConnect from '../Templates/Inputs/login';
 import InputPasswordWithErrorConnect from '../Templates/Inputs/password';
-import LoginPrefix from '../PrefixConsumer/prefixConsumer';
+import LoginPrefix from '.././Prefix-consumer/prefixConsumer';
 
-export default function LoginForm() {
+export default function Form() {
     return (
         <form action="/table">
             <LoginPrefix>

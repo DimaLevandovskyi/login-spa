@@ -5,7 +5,7 @@ type LoginErrorsType = {
     loginPage:LoginPageType,
     prefix?:string
 }
-export default function LoginErrors({ loginPage, prefix }:LoginErrorsType) {
+export default function Errors({ loginPage, prefix }:LoginErrorsType) {
     return (
         <>
             {

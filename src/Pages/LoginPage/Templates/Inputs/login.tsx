@@ -2,8 +2,6 @@ import { connect } from 'react-redux';
 import InputWithError from '../../../../Templates/Inputs/input-with-error';
 import { enterLoginAction } from '../../../../App/Reducers/loginPage/errors';
 import { AppDispatch, RootState } from '../../../../App/Redux-store/redux-store';
-// import { compose } from 'redux';
-// import LoginPrefix from '../../PrefixConsumer/prefixConsumer';
 
 type MapStateToPropsType = {
     placeholder:string,
@@ -28,9 +26,5 @@ const mapDispatchToProps = (dispatch:AppDispatch) => ({
 });
 
 const InputLoginWithErrorConnect = connect(mapStateToProps, mapDispatchToProps)(InputWithError);
-// const InputLoginWithErrorConnect = compose(
-//     connect(mapStateToProps, mapDispatchToProps),
-//     LoginPrefix
-// )(InputWithError);
 
 export default InputLoginWithErrorConnect;

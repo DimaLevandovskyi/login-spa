@@ -1,5 +1,5 @@
 import React from 'react';
-import WrapperError from './input-error';
+import WrapperError from './wrapper-error';
 
 type propsType = {
     errorEmail:boolean,
