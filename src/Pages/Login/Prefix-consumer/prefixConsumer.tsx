@@ -1,8 +1,12 @@
 import React from 'react';
 import { PagesContext } from '../Prefix-provider/prefix-provider';
 
-const Prefix = (Wrapper:any) => (props:any) => {
-    return (
+type BaseProps = {
+    prefix: string;
+}
+
+function Prefix<T extends BaseProps>(Wrapper: React.FC<T>) {
+    return (props: T) => (
         <PagesContext.Consumer>
             {
                 (prefix) => (
@@ -11,6 +15,6 @@ const Prefix = (Wrapper:any) => (props:any) => {
             }
         </PagesContext.Consumer>
     );
-};
+}
 
 export default Prefix;
