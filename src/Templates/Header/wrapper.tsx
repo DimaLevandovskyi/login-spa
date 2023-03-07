@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { userStatusAction } from '../../../App/Reducers/loginPage/loginReducer';
-import { LoginPageType } from '../../../Types/types';
-import { AppDispatch } from '../../../App/Redux-store/redux-store';
+import { userStatusAction } from '../../App/Reducers/loginPage/loginReducer';
+import { LoginPageType } from '../../Types/types';
+import { AppDispatch } from '../../App/Redux-store/redux-store';
 
 type HeaderLayoutType = {
     dispatch:AppDispatch,

@@ -5,22 +5,24 @@ import Errors from './Errors/errors';
 import Heading from '../../Templates/Heading/heading';
 import { LoginPageType } from '../../Types/types';
 import { AppDispatch } from '../../App/Redux-store/redux-store';
-import LoginPrefix from '././Prefix-consumer/prefixConsumer';
+import PrefixProvider from '../../Pages/Login/Prefix-provider/prefix-provider';
 
 type LoginType = {
     dispatch:AppDispatch,
     loginPage:LoginPageType
 }
-export default function LoginPage({ loginPage }:LoginType) {
+
+function LoginPage({ loginPage }:LoginType) {
     return (
-        <LoginPrefix>
+        <PrefixProvider prefix="login">
             <Wrapper>
-                <LoginPrefix>
-                    <Heading heading='Login'/>
-                    <Errors loginPage={loginPage} />
-                    <Form />
-                </LoginPrefix>
+                <Heading heading='Login'/>
+                <Errors loginPage={loginPage} />
+                <Form />
             </Wrapper>
-        </LoginPrefix>
+        </PrefixProvider>
     );
 }
+
+
+export default LoginPage;

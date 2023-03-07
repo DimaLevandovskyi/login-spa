@@ -1,6 +1,6 @@
 import React from 'react';
-import { LoginPageType } from '../../../Types/types';
-import { AppDispatch } from '../../../App/Redux-store/redux-store';
+import { LoginPageType } from '../../Types/types';
+import { AppDispatch } from '../../App/Redux-store/redux-store';
 import Layout from './wrapper';
 
 type HeaderType = {

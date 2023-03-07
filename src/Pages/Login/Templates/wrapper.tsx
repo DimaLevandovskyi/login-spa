@@ -1,10 +1,11 @@
 import React from 'react';
+import Prefix from '../Prefix-consumer/prefixConsumer';
 
-type PropsType = {
+export type PropsType = {
     children: JSX.Element|JSX.Element[],
     prefix?: string
 }
-export default function Wrapper({ children, prefix }:PropsType) {
+function Wrapper({ children, prefix }:PropsType) {
     return (
         <div className={prefix as string}>
             { children }
@@ -12,4 +13,4 @@ export default function Wrapper({ children, prefix }:PropsType) {
     );
 }
 
-
+export default Prefix(Wrapper);
