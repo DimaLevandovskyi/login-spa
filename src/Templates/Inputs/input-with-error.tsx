@@ -1,5 +1,6 @@
 import React from 'react';
 import WrapperError from './wrapper-error';
+import Prefix from '../../Pages/Login/Prefix-consumer/prefixConsumer';
 
 type propsType = {
     errorEmail:boolean,
@@ -11,7 +12,7 @@ type propsType = {
     errorPassword:boolean,
     prefix?:string
 }
-export default function InputWithError(
+function InputWithError(
     { enterData, value, errorEmail, type, placeholder, className, errorPassword, prefix }:propsType) {
     return (
         <div className={`${prefix as string}__inputs-block`}>
@@ -31,3 +32,6 @@ export default function InputWithError(
         </div>
     );
 }
+
+export default Prefix(InputWithError);
+

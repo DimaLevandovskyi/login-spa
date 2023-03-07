@@ -1,8 +1,7 @@
 import React from 'react';
 import { PagesContext } from '../Prefix-provider/prefix-provider';
-import { PropsType } from '../Templates/wrapper';
 
-const Prefix = (Wrapper:JSX.Element) => (props:PropsType) => {
+const Prefix = (Wrapper:any) => (props:any) => {
     return (
         <PagesContext.Consumer>
             {
@@ -15,4 +14,3 @@ const Prefix = (Wrapper:JSX.Element) => (props:PropsType) => {
 };
 
 export default Prefix;
-

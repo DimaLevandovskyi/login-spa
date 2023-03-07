@@ -1,11 +1,12 @@
 import React from 'react';
 import { LoginPageType } from '../../../Types/types';
+import Prefix from '../Prefix-consumer/prefixConsumer';
 
 type LoginErrorsType = {
     loginPage:LoginPageType,
     prefix?:string
 }
-export default function Errors({ loginPage, prefix }:LoginErrorsType) {
+function Errors({ loginPage, prefix }:LoginErrorsType) {
     return (
         <>
             {
@@ -16,3 +17,5 @@ export default function Errors({ loginPage, prefix }:LoginErrorsType) {
         </>
     );
 }
+
+export default Prefix(Errors);

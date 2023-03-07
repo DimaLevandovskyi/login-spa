@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../../../../Templates/Buttons/buttonPrimary';
 import { LoginPageType } from '../../../../Types/types';
+import Prefix from '../../Prefix-consumer/prefixConsumer';
 
 type superButtonType = {
     text: string,
@@ -23,4 +24,4 @@ const superButton = ({ text, prefix, loginPage, wrongSubmitAction }:superButtonT
     return <Button onClick={onClickButton} text={text} className={`${prefix as string}__button button`} />;
 };
 
-export default superButton;
+export default Prefix(superButton);
