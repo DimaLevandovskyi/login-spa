@@ -1,6 +1,6 @@
 import React from 'react';
 import WrapperError from './wrapper-error';
-import Prefix from '../../Pages/Login/Prefix-consumer/prefixConsumer';
+import Prefix from '../../Services/Prefix-consumer/prefixConsumer';
 
 type propsType = {
     errorEmail:boolean,

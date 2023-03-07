@@ -1,15 +1,12 @@
 import React from 'react';
 import { PagesContext } from '../Prefix-provider/prefix-provider';
 
-type BaseProps = {
-    prefix: string;
-}
 
-function Prefix<T extends BaseProps>(Wrapper: React.FC<T>) {
+function Prefix<T>(Wrapper: React.FC<T>) {
     return (props: T) => (
         <PagesContext.Consumer>
             {
-                (prefix) => (
+                (prefix:string) => (
                     <Wrapper {...props} prefix={prefix}/>
                 )
             }

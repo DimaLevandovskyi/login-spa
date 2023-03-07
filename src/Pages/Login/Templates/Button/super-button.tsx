@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../../../../Templates/Buttons/buttonPrimary';
 import { LoginPageType } from '../../../../Types/types';
-import Prefix from '../../Prefix-consumer/prefixConsumer';
+import Prefix from '../../../../Services/Prefix-consumer/prefixConsumer';
 
 type superButtonType = {
     text: string,

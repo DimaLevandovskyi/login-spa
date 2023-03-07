@@ -5,7 +5,7 @@ import Errors from './Errors/errors';
 import Heading from '../../Templates/Heading/heading';
 import { LoginPageType } from '../../Types/types';
 import { AppDispatch } from '../../App/Redux-store/redux-store';
-import PrefixProvider from '../../Pages/Login/Prefix-provider/prefix-provider';
+import PrefixProvider from '../../Services/Prefix-provider/prefix-provider';
 
 type LoginType = {
     dispatch:AppDispatch,

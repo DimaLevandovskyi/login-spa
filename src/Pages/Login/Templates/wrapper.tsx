@@ -1,9 +1,9 @@
 import React from 'react';
-import Prefix from '../Prefix-consumer/prefixConsumer';
+import Prefix from '../../../Services/Prefix-consumer/prefixConsumer';
 
 type PropsType = {
     children: JSX.Element | JSX.Element[],
-    prefix: string
+    prefix?: string
 }
 
 function Wrapper({ children, prefix }: PropsType) {

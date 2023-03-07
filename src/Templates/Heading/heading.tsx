@@ -1,5 +1,5 @@
 import React from 'react';
-import Prefix from '../../Pages/Login/Prefix-consumer/prefixConsumer';
+import Prefix from '../../Services/Prefix-consumer/prefixConsumer';
 
 type propsType = {
     prefix?:string,

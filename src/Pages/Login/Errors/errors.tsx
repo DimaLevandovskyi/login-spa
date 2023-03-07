@@ -1,6 +1,6 @@
 import React from 'react';
 import { LoginPageType } from '../../../Types/types';
-import Prefix from '../Prefix-consumer/prefixConsumer';
+import Prefix from '../../../Services/Prefix-consumer/prefixConsumer';
 
 type LoginErrorsType = {
     loginPage:LoginPageType,
@@ -18,4 +18,4 @@ function Errors({ loginPage, prefix }:LoginErrorsType) {
     );
 }
 
-export default Prefix(Errors);
+export default Prefix<LoginErrorsType>(Errors);
