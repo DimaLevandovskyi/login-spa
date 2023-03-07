@@ -1,14 +1,24 @@
 import React from 'react';
 import { PagesContext } from '../Prefix-provider/prefix-provider';
 
+type HOCProps = {
+    prefix: string
+};
 
-function Prefix<T>(Wrapper: React.FC<T>) {
-    return (props: T) => (
+function Prefix<T extends HOCProps>(Wrapper: React.FC<T>) {
+    return (props: Omit<T, 'prefix'>) => (
         <PagesContext.Consumer>
             {
-                (prefix:string) => (
-                    <Wrapper {...props} prefix={prefix}/>
-                )
+                (prefix:string) => {
+                    const mainProps = {
+                        ...props,
+                        prefix
+                    } as T;
+
+                    return (
+                        <Wrapper {...mainProps}/>
+                    )
+                }
             }
         </PagesContext.Consumer>
     );
