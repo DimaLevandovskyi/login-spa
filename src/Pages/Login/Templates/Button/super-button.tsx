@@ -5,7 +5,7 @@ import Prefix from '../../../../Services/Prefix-consumer/prefixConsumer';
 
 type superButtonType = {
     text: string,
-    prefix?: string,
+    prefix: string,
     loginPage: LoginPageType,
     wrongSubmitAction: () => void,
 }
@@ -21,7 +21,7 @@ const superButton = ({ text, prefix, loginPage, wrongSubmitAction }:superButtonT
         }
     };
 
-    return <Button onClick={onClickButton} text={text} className={`${prefix as string}__button button`} />;
+    return <Button onClick={onClickButton} text={text} className={`${prefix}__button button`} />;
 };
 
 export default Prefix(superButton);

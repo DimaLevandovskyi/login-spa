@@ -17,7 +17,7 @@ function Prefix<T extends HOCProps>(Wrapper: React.FC<T>) {
 
                     return (
                         <Wrapper {...mainProps}/>
-                    )
+                    );
                 }
             }
         </PagesContext.Consumer>

@@ -7,7 +7,7 @@ type propsType = {
 }
 function Heading({ prefix, heading }:propsType) {
     return (
-        <h1 className={`${prefix as string}__title`}>{heading}</h1>
+        <h1 className={`${prefix}__title`}>{heading}</h1>
     );
 }
 

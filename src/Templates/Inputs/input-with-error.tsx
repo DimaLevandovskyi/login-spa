@@ -10,12 +10,12 @@ type propsType = {
     placeholder:string,
     className:string,
     errorPassword:boolean,
-    prefix?:string
+    prefix:string
 }
 function InputWithError(
     { enterData, value, errorEmail, type, placeholder, className, errorPassword, prefix }:propsType) {
     return (
-        <div className={`${prefix as string}__inputs-block`}>
+        <div className={`${prefix}__inputs-block`}>
             <input
                 onChange={(e) => { enterData(e.target.value); } }
                 placeholder={placeholder}

@@ -4,18 +4,18 @@ import Prefix from '../../../Services/Prefix-consumer/prefixConsumer';
 
 type LoginErrorsType = {
     loginPage:LoginPageType,
-    prefix?:string
+    prefix:string
 }
 function Errors({ loginPage, prefix }:LoginErrorsType) {
     return (
         <>
             {
                 loginPage.wrongSubmit ?
-                    <div className={`${prefix as string}__errors`}>You entered incorrect login details</div> :
+                    <div className={`${prefix}__errors`}>You entered incorrect login details</div> :
                     null
             }
         </>
     );
 }
 
-export default Prefix<LoginErrorsType>(Errors);
+export default Prefix(Errors);
